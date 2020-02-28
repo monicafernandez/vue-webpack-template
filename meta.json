@@ -1,0 +1,41 @@
+{
+    "prompts": {
+        "name": {
+            "type": "string",
+            "required": "true",
+            "label": "WiWi name in kebab-case format",
+            "default": "wiwi-project"
+        },
+        "description": {
+            "type": "string",
+            "required": "true",
+            "label": "Project description",
+            "default": "A WiWi project"
+        },
+        "author": {
+            "type": "string",
+            "label": "Author"
+        },
+        "WiWiType": {
+            "type": "list",
+            "message": "Pic an WiWi type",
+            "choices": [{
+                    "name": "Wizard",
+                    "value": "wizard",
+                    "short": "Wizard"
+                },
+                {
+                    "name": "Widget",
+                    "value": "widget",
+                    "short": "Widget"
+                },
+                {
+                    "name": "none (configure it yourself)",
+                    "value": "none",
+                    "short": "none"
+                }
+            ]
+        }
+    },
+    "completeMessage": "To get started:\n\n{{^inPlace}}cd {{destDirName}}\nyarn install\n\n{{/inPlace}}1. Write your wiwi in src/components/wiwi.vue\n2. Write a demo in src/App.vue\n3. yarn run build\n4. yarn run dev"
+}
