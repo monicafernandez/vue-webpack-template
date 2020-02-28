@@ -25,6 +25,14 @@ $ npm install
 $ npm run dev
 ```
 
+## Generate version
+
+This project offers the following script that version the project using [npm-version](https://docs.npmjs.com/cli/version)
+
+``` shell
+$ npm version [ major | minor | patch ]
+```
+
 ## License
 
 [MIT](https://github.com/amplia-iiot/wiwi-template/blob/master/LICENSE)
