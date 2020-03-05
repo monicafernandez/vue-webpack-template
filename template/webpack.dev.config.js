@@ -8,13 +8,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
+require("babel-polyfill");
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
-  entry: './src/main.js',
+  entry: ["babel-polyfill", './src/main.js'],
   module: {
     rules: [{
       test: /\.s(c|a)ss$/,
