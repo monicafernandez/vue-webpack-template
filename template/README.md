@@ -40,11 +40,11 @@ $ npm version [ major | minor | patch ]
 
 ## Utils for development
 
-The project contains some tools (components and plugins) contained in the web where the wiwi will be installed.
+The project contains some tools (components and plugins).
 
-This facilitates the autonomous development of the wiwi.
+This facilitates the autonomous development of the component.
 
-Listed below are these tools with examples of how to use them in our wiwi.
+Listed below are these tools with examples of how to use them in our component.
 
 ### $jsonPath
 
