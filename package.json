@@ -1,6 +1,6 @@
 {
-  "name": "wiwi-template",
-  "description": "A wiwi template + vue-loader setup with hot reload based on the template webpack for quick prototyping.",
+  "name": "vue-webpack-template",
+  "description": "A webpack template + vue-loader setup with hot reload for quick prototyping.",
   "version": "1.0.0",
   "author": "mfernandez <monica.fernandez@amplia.es>",
   "license": "MIT",

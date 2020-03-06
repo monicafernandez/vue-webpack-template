@@ -9,23 +9,23 @@
         </v-toolbar>
       </v-card-title>
       <v-card-text>
-        <component></component>
+        <my-component></my-component>
       </v-card-text>
     </v-card>
   </v-app>
 </template>
 <script>
-import config from "../meta-widget.json";
-import component from "./components/wiwi.vue";
+import config from "../package.json";
+import myComponent from "./components/index.vue";
 
 export default {
-  name: "WIWizard",
+  name: "demo",
   components: {
-    component
+    myComponent
   },
   computed: {
     title() {
-      return config.actions[Object.keys(config.actions)[0]][0];
+      return config.name;
     }
   }
 };

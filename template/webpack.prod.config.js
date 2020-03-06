@@ -7,7 +7,7 @@ require("babel-polyfill");
 
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
-  entry:  ["babel-polyfill", './src/components/wiwi.vue'],
+  entry:  ["babel-polyfill", './src/components/component.vue'],
   optimization: {
   minimizer: [
     // we specify a custom UglifyJsPlugin here to get source maps in production

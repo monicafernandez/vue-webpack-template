@@ -1,5 +1,5 @@
-# wiwi-template
-A wiwi template + vue-loader setup with hot reload based on the template webpack for quick prototyping.
+# vue-webpack-template
+A webpack template + vue-loader setup with hot reload for quick prototyping.
 
 > Use vue-cli: https://www.npmjs.com/package/vue-cli-luozheao
 
@@ -9,8 +9,8 @@ This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). **It
 
 ```shell
 $ yarn global add vue-cli
-$ vue init amplia-iiot/wiwi-template my-wiwi
-$ cd my-wiwi
+$ vue init monicafernandez/vue-webpack-template my-project
+$ cd my-project
 $ yarn install
 $ yarn run dev
 ```
@@ -19,8 +19,8 @@ or
 
 ```shell
 $ npm install -g vue-cli
-$ vue init amplia-iiot/wiwi-template my-wiwi
-$ cd my-wiwi
+$ vue init monicafernandez/vue-webpack-template my-project
+$ cd my-project
 $ npm install
 $ npm run dev
 ```
@@ -35,5 +35,5 @@ $ npm version [ major | minor | patch ]
 
 ## License
 
-[MIT](https://github.com/amplia-iiot/wiwi-template/blob/master/LICENSE)
+[MIT](https://github.com/monicafernandez/vue-webpack-template/blob/master/LICENSE)
 

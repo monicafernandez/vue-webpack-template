@@ -30,55 +30,6 @@ npm run build
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-## Install wiwi on web OpenGate UX
-
-> Use axios: https://github.com/axios/axios
-
-Installation and management wiwi on the web OpenGate UX is done through the following commands:
-
-**Register**
-
-``` bash
-$ yarn run register
-```
-
-or
-
-``` bash
-$ npm run register
-```
-
-**Update**
-
-``` bash
-$ yarn run update
-```
-
-or
-
-``` bash
-$ npm run update
-```
-
-**Delete**
-
-``` bash
-$ yarn run delete
-```
-
-or 
-
-``` bash
-$ npm run delete
-```
-
-They will ask for the following information:
-
-1. Type url of api-web (http://localhost:3977): default http://localhost:3977
-2. domain: domain of user that exists in the platform OpenGate
-3. user name: user that exists in the platform OpenGate
-4. password: password of user
-
 ## Generate version
 
 This project offers the following script that version the project using [npm-version](https://docs.npmjs.com/cli/version)
@@ -87,5 +38,86 @@ This project offers the following script that version the project using [npm-ver
 $ npm version [ major | minor | patch ]
 ```
 
+## Utils for development
 
+The project contains some tools (components and plugins) contained in the web where the wiwi will be installed.
+
+This facilitates the autonomous development of the wiwi.
+
+Listed below are these tools with examples of how to use them in our wiwi.
+
+### $jsonPath
+
+``` javascript
+export default {
+  name: 'exampleJsonPath',
+  data() {
+    return {
+      example: {
+        one: '1',
+        two: '2'
+      }
+    }
+  }
+  computed: {
+    return this.$jsonPath(this.example, '$.one')[0]
+    //return 1
+  }
+}
+```
+
+### $api 
+
+> https://github.com/amplia-iiot/opengate-js
+
+1. Configure 
+
+``` javascript
+// src/plugins/store.js
+{
+  apiKey: '@@API_KEY@@',
+  url: '@@NORTH_API@@',
+  timeout: 60000,
+  south: {
+    url: '@@SOUTH_API@@'
+  }
+}
+
+```
+
+2. Use
+
+``` javascript
+import { mapGetters } from "vuex";
+
+export default {
+  name: 'exampleApi',
+  data() {
+    return {
+      entries: []
+    }
+  },
+  methods: {
+    async search(){
+      this.entries.splice(0, this.entries.length);
+      try {
+        const result = await this.builder.build().execute();
+        if (result.statusCode !== 204) {
+          this.entries = result.data.entities;
+        }
+      } catch (err) {
+        console.log(err);
+      } finally {
+      }
+    }
+  },
+  computed: {
+    //https://vuex.vuejs.org/guide/getters.html#the-mapgetters-helper
+    ...mapGetters({ api: "$api" }),
+    builder() {
+      return this.api.entitiesSearchBuilder();
+    }
+  }
+}
+```
 
